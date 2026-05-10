@@ -62,8 +62,8 @@
     toggle.appendChild(chev);
 
     panel.appendChild(iframe);
-    root.appendChild(panel);
     root.appendChild(toggle);
+    root.appendChild(panel);
     (document.documentElement || document.body).appendChild(root);
 
     return root;
