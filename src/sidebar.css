@@ -1,5 +1,10 @@
+html,
 body {
+  height: 100%;
   margin: 0;
+}
+
+body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   font-size: 14px;
   line-height: 1.5;
@@ -8,7 +13,16 @@ body {
 }
 
 .ap-sidebar-main {
-  padding: 16px 18px 24px;
+  box-sizing: border-box;
+  min-height: 100%;
+  padding: 16px 18px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ap-sidebar-body {
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 .ap-sidebar-title {
@@ -28,4 +42,69 @@ body {
   font-size: 13px;
   color: #5f6368;
   margin-bottom: 0;
+}
+
+.ap-sidebar-footer {
+  flex-shrink: 0;
+  margin-top: auto;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ap-sidebar-footer-actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.ap-sidebar-upload {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  background: #fff;
+  color: #1a73e8;
+  cursor: pointer;
+}
+
+.ap-sidebar-upload:hover {
+  background: #f8f9fa;
+}
+
+.ap-sidebar-upload:focus-visible {
+  outline: 2px solid #1a73e8;
+  outline-offset: 2px;
+}
+
+.ap-sidebar-textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px 12px;
+  font: inherit;
+  line-height: 1.45;
+  color: #202124;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  background: #fff;
+  resize: vertical;
+  min-height: 120px;
+}
+
+.ap-sidebar-textarea::placeholder {
+  color: rgba(95, 99, 104, 0.55);
+}
+
+.ap-sidebar-textarea:hover {
+  border-color: #bdc1c6;
+}
+
+.ap-sidebar-textarea:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 1px #1a73e8;
 }
