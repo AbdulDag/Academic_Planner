@@ -1,0 +1,103 @@
+/* Scoped to extension UI only; root layout class is on html. */
+
+html.ap-calendar-sidebar-open {
+  box-sizing: border-box !important;
+  padding-inline-end: 33.333vw !important;
+}
+
+.ap-host {
+  all: initial;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.ap-host *,
+.ap-host *::before,
+.ap-host *::after {
+  box-sizing: border-box;
+}
+
+.ap-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 33.333vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 2147483000;
+  display: none;
+  flex-direction: column;
+  border-inline-start: 1px solid rgba(0, 0, 0, 0.12);
+  background: #fff;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.08);
+}
+
+html.ap-calendar-sidebar-open .ap-panel {
+  display: flex;
+}
+
+.ap-frame {
+  flex: 1;
+  width: 100%;
+  border: 0;
+  display: block;
+  background: #fff;
+}
+
+.ap-toggle {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 2147483001;
+  width: 28px;
+  height: 56px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-inline-end: none;
+  border-radius: 8px 0 0 8px;
+  background: #fff;
+  color: #1f1f1f;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.06);
+}
+
+.ap-toggle:hover {
+  background: #f3f3f3;
+}
+
+.ap-toggle:focus-visible {
+  outline: 2px solid #1a73e8;
+  outline-offset: 2px;
+}
+
+/* When open, sit toggle at inner edge of gutter (left side of reserved strip). */
+html.ap-calendar-sidebar-open .ap-toggle {
+  right: 33.333vw;
+}
+
+.ap-toggle-chevron {
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+/* Closed: chevron points left (open). Open: chevron points right (close). */
+.ap-toggle .ap-toggle-chevron {
+  border-width: 6px 0 6px 8px;
+  border-color: transparent transparent transparent #444;
+  margin-inline-start: 2px;
+}
+
+html.ap-calendar-sidebar-open .ap-toggle .ap-toggle-chevron {
+  border-width: 6px 8px 6px 0;
+  border-color: transparent #444 transparent transparent;
+  margin-inline-start: 0;
+  margin-inline-end: 2px;
+}

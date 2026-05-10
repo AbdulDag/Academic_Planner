@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Academic Planner (Calendar sidebar)",
+  "version": "0.1.0",
+  "description": "Toggleable sidebar on Google Calendar; reserves one-third of the viewport without covering Calendar.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://calendar.google.com/*"],
+  "action": {
+    "default_title": "Toggle Calendar sidebar"
+  },
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://calendar.google.com/*"],
+      "js": ["src/content.js"],
+      "css": ["src/content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/sidebar.html", "src/sidebar.css"],
+      "matches": ["https://calendar.google.com/*"]
+    }
+  ]
+}
